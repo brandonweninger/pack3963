@@ -1,4 +1,6 @@
-/* Color palette */
+/* ============================
+   COLOR PALETTE
+   ============================ */
 :root {
   --blue: #003F87;
   --gold: #FFCC00;
@@ -8,7 +10,9 @@
   --dark-gray: #333333;
 }
 
-/* Reset */
+/* ============================
+   RESET & BASE
+   ============================ */
 * {
   margin: 0;
   padding: 0;
@@ -22,7 +26,9 @@ body {
   line-height: 1.6;
 }
 
-/* Announcement Banner */
+/* ============================
+   ANNOUNCEMENT BANNER
+   ============================ */
 .announcement-banner {
   background-color: var(--gold);
   color: var(--dark-gray);
@@ -31,11 +37,19 @@ body {
   font-weight: 600;
 }
 
-.announcement-banner .btn-gold {
+.btn-gold {
+  background-color: var(--red);
+  color: var(--white);
+  padding: 8px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
   margin-left: 10px;
 }
 
-/* Navigation */
+/* ============================
+   NAVIGATION
+   ============================ */
 .main-nav {
   background-color: var(--blue);
   color: var(--white);
@@ -73,25 +87,25 @@ body {
   text-decoration: underline;
 }
 
-/* Hero Image */
+/* ============================
+   HERO IMAGE
+   ============================ */
 .hero-header {
   width: 100%;
-  background-color: var(--light-gray);
+  overflow: hidden;
 }
 
-.hero-image-placeholder {
+.hero-image {
   width: 100%;
-  height: 300px;
-  background-color: #d9d9d9;
-  border: 2px dashed var(--blue);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--blue);
-  font-size: 1.2rem;
+  height: 320px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
-/* Sections */
+/* ============================
+   MAIN CONTENT
+   ============================ */
 .section {
   padding: 40px 20px;
 }
@@ -107,44 +121,58 @@ body {
   gap: 30px;
 }
 
+/* ============================
+   LEFT COLUMN TEXT
+   ============================ */
+.feature-list {
+  margin: 15px 0 25px 20px;
+  line-height: 1.7;
+}
+
+.callout-box {
+  background-color: var(--light-gray);
+  border-left: 5px solid var(--blue);
+  padding: 20px;
+  margin: 25px 0;
+  border-radius: 6px;
+}
+
+.callout-box h2 {
+  margin-bottom: 10px;
+  color: var(--blue);
+}
+
+/* ============================
+   RIGHT COLUMN LOGO
+   ============================ */
 .column-image {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  padding-top: 20px;
 }
 
-.logo-placeholder {
-  width: 260px;
-  height: 260px;
-  background-color: #d9d9d9;
-  border: 2px dashed var(--blue);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--blue);
-  font-size: 1rem;
+.cub-logo {
+  width: 220px;
+  height: auto;
+  display: block;
 }
 
-/* Buttons */
-.btn {
-  display: inline-block;
+/* ============================
+   BUTTONS
+   ============================ */
+.btn-blue {
+  background-color: var(--blue);
+  color: var(--white);
   padding: 8px 14px;
   border-radius: 4px;
   text-decoration: none;
   font-weight: 600;
 }
 
-.btn-gold {
-  background-color: var(--red);
-  color: var(--white);
-}
-
-.btn-blue {
-  background-color: var(--blue);
-  color: var(--white);
-}
-
-/* Footer */
+/* ============================
+   FOOTER
+   ============================ */
 .site-footer {
   background-color: var(--blue);
   color: var(--white);
@@ -158,17 +186,20 @@ body {
   margin: 0 auto;
 }
 
-/* Responsive */
+/* ============================
+   RESPONSIVE DESIGN
+   ============================ */
 @media (max-width: 768px) {
   .two-column {
     grid-template-columns: 1fr;
   }
-}
 
-.cub-logo {
-  width: 220px;     /* Resize the logo */
-  height: auto;     /* Keep proportions correct */
-  display: block;
-  margin: 0 auto;   /* Center the logo */
-}
+  .cub-logo {
+    width: 180px;
+    margin: 0 auto;
+  }
 
+  .hero-image {
+    height: 220px;
+  }
+}
