@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <!-- ============================
+       SEO: TITLE + DESCRIPTION + KEYWORDS
+       ============================ -->
+  <title>Contact Us – Cub Scout Pack 3963 | Chicago, IL</title>
+
+  <meta name="description" content="Contact Cub Scout Pack 3963 in Chicago, IL. Reach out to our leadership team with questions about joining, volunteering, events, or den activities. Serving Jefferson Park, Portage Park, and the Northwest Side.">
+
+  <meta name="keywords" content="Cub Scout contact, Pack 3963 contact, Chicago Cub Scouts, Jefferson Park Scouts, Portage Park Scouts, join Cub Scouts, scouting information Chicago">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Top Announcement Banner -->
+  <div class="announcement-banner">
+    <p>New and Returning Scouts for 2026 — our first meeting is September 19 at 9:30 AM.</p>
+    <a href="events.html" class="btn-gold">Click here for details</a>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Pack 3963</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dens.html">Dens</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="leadership.html">Leadership</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="photos.html">Photos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Header -->
+  <header class="hero-header">
+    <div class="hero-image-wrapper">
+      <img 
+        src="assets/troopheader.jpg" 
+        alt="Contact Cub Scout Pack 3963 – Chicago, IL"
+        class="hero-image"
+      />
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="section">
+    <div class="section-inner">
+
+      <h1>Contact Cub Scout Pack 3963</h1>
+      <p>
+        We’re excited to connect with new and returning families! Whether you have questions about joining,
+        volunteering, den activities, or upcoming events, our leadership team is here to help.
+      </p>
+
+      <p>
+        Cub Scout Pack 3963 serves families across Jefferson Park, Portage Park, and the Northwest Side of Chicago.
+        We look forward to hearing from you!
+      </p>
+
+      <hr style="margin: 30px 0; border: none; border-top: 2px solid var(--light-gray);" />
+
+      <!-- ============================
+           CONTACT INFORMATION
+           ============================ -->
+      <h2>Pack Contact Information</h2>
+
+      <p class="contact-info">
+        <strong>Email:</strong> cubscouts3963@gmail.com<br>
+        <strong>Phone:</strong> (773) 257-3212
+      </p>
+
+      <hr style="margin: 30px 0; border: none; border-top: 2px solid var(--light-gray);" />
+
+      <!-- ============================
+           CONTACT FORM
+           ============================ -->
+      <h2>Send Us a Message</h2>
+      <p>Use the form below to reach out. A Pack leader will respond as soon as possible.</p>
+
+      <form 
+        action="https://formspree.io/f/YOUR_FORM_ID" 
+        method="POST" 
+        class="contact-form"
+        style="max-width: 600px; margin-top: 20px;"
+      >
+        <label>Name</label>
+        <input type="text" name="name" required>
+
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <label>Phone (optional)</label>
+        <input type="text" name="phone">
+
+        <label>Message</label>
+        <textarea name="message" rows="6" required></textarea>
+
+        <button type="submit" class="btn-blue" style="margin-top: 10px;">Send Message</button>
+      </form>
+
+      <p style="margin-top: 20px; font-size: 0.9rem; color: var(--dark-gray);">
+        *Your information is kept private and used only for Pack communication.
+      </p>
+
+      <hr style="margin: 30px 0; border: none; border-top: 2px solid var(--light-gray);" />
+
+      <!-- ============================
+           JOIN PACK 3963 CTA
+           ============================ -->
+      <h2>Interested in Joining?</h2>
+      <p>
+        Cub Scouts is open to boys and girls in kindergarten through fifth grade.  
+        Visit our <a href="index.html">Home Page</a> or <a href="events.html">Events Page</a> to learn more about
+        upcoming activities and how to get started.
+      </p>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>&copy; <span id="year"></span> Cub Scout Pack 3963 — Chicago, IL</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
