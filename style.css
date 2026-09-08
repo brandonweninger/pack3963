@@ -108,11 +108,12 @@ body {
 
 .hero-image {
   width: 100%;
-  height: 360px; /* fixed header height */
-  object-fit: cover;
-  object-position: center;
+  height: 360px;        /* Banner height */
+  object-fit: cover;    /* Crops the image cleanly */
+  object-position: center 35%;  /* Adjust vertical crop */
   display: block;
 }
+
 
 /* ============================
    MAIN CONTENT
