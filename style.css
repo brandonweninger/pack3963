@@ -88,16 +88,27 @@ body {
 }
 
 /* ============================
-   HERO IMAGE
+   HERO HEADER (FIXED LAYOUT)
    ============================ */
 .hero-header {
   width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--light-gray);
+  margin-bottom: 30px; /* spacing below header */
+}
+
+.hero-image-wrapper {
+  width: 100%;
+  max-width: 1400px; /* prevents overly wide stretching */
+  margin: 0 auto;
   overflow: hidden;
+  border-bottom: 4px solid var(--blue); /* branding line */
 }
 
 .hero-image {
   width: 100%;
-  height: 320px;
+  height: 360px; /* fixed header height */
   object-fit: cover;
   object-position: center;
   display: block;
@@ -200,6 +211,6 @@ body {
   }
 
   .hero-image {
-    height: 220px;
+    height: 240px;
   }
 }
