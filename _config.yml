@@ -1,0 +1,7 @@
+# Enable Jekyll processing on GitHub Pages
+markdown: kramdown
+
+# Announcement banner settings
+announcement_enabled: true
+announcement_text: "New and Returning Scouts for 2026 — our first meeting is September 19 at 9:30 AM."
+announcement_link: "events.html"
