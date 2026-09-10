@@ -1,0 +1,8 @@
+{% if site.announcement_enabled %}
+<div class="announcement-banner">
+  <p>{{ site.announcement_text }}</p>
+  {% if site.announcement_link %}
+    <a href="{{ site.announcement_link }}" class="btn-gold">Click here for details</a>
+  {% endif %}
+</div>
+{% endif %}
