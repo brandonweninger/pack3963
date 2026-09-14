@@ -94,3 +94,18 @@
   margin-left: 20px;
   line-height: 1.7;
 }
+
+/* =========================================
+   FLYER IMAGE (Responsive Fix)
+   ========================================= */
+.flyer-image-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.flyer-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 100%;
+}
