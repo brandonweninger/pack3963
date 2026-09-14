@@ -11,18 +11,28 @@
   <title>Leadership – Cub Scout Pack 3963 | Chicago, IL</title>
 
   <meta name="description" content="Meet the leadership team of Cub Scout Pack 3963 in Chicago, IL. Dedicated volunteers serving Jefferson Park, Portage Park, and the Northwest Side to deliver a fun, safe, and engaging Cub Scout program.">
-
   <meta name="keywords" content="Cub Scout leaders Chicago, Pack 3963 leadership, Jefferson Park Cub Scouts, Portage Park Scouts, Cub Scout volunteers, scouting leadership Chicago">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
+
+  <!-- ============================
+       GOOGLE ANALYTICS (GA4)
+       ============================ -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5E98N12ZK1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5E98N12ZK1');
+  </script>
+
 </head>
 
 <body>
 
   <!-- Top Announcement Banner -->
-{% include announcement.html %}
-
+  {% include announcement.html %}
 
   <!-- Navigation -->
   <nav class="main-nav">
@@ -61,6 +71,11 @@
         Cub Scout Pack 3963 is powered by a dedicated team of volunteers who work together to create a safe,
         fun, and meaningful Scouting experience for families across Jefferson Park, Portage Park, and the
         Northwest Side of Chicago.
+      </p>
+
+      <p>
+        Pack 3963 meets at <strong>Eden United Church of Christ</strong>, located at 
+        <strong>5051 W Gunnison St, Chicago, IL 60630</strong>.
       </p>
 
       <p>
@@ -173,7 +188,10 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <p>&copy; <span id="year"></span> Cub Scout Pack 3963 — Chicago, IL</p>
+      <p>
+        &copy; <span id="year"></span> Cub Scout Pack 3963 — Chicago, IL<br>
+        <strong>Meeting Location:</strong> Eden United Church of Christ, 5051 W Gunnison St, Chicago, IL 60630
+      </p>
     </div>
   </footer>
 
