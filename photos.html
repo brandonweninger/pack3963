@@ -1,19 +1,32 @@
 ---
+layout: none
+title: "Photos – Cub Scout Pack 3963"
+description: "Photo gallery for Cub Scout Pack 3963 in Chicago, IL. Pictures from campouts, Pinewood Derby, den meetings, and pack events."
 ---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Photos – Cub Scout Pack 3963 | Chicago, IL</title>
-    <meta name="description" content="Photo gallery for Cub Scout Pack 3963 in Chicago, IL. Pictures from campouts, Pinewood Derby, den meetings, and pack events will be added soon.">
+    <title>{{ page.title }}</title>
+    <meta name="description" content="{{ page.description }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      <!-- Modular CSS System -->
-  <link rel="stylesheet" href="base.css">
-  <link rel="stylesheet" href="layout.css">
-  <link rel="stylesheet" href="components.css">
-  <link rel="stylesheet" href="forms.css">
-  <link rel="stylesheet" href="responsive.css">
+    <!-- Modular CSS System -->
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="forms.css">
+    <link rel="stylesheet" href="responsive.css">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5E98N12ZK1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5E98N12ZK1');
+    </script>
 </head>
 
 <body>
@@ -24,16 +37,25 @@
 <!-- Navigation -->
 {% include nav.html %}
 
-    <header class="page-header">
-        <h1>Pack 3963 Photos</h1>
-        <p>Our photo gallery is coming soon! Check back for pictures from campouts, Pinewood Derby, den meetings, and pack events.</p>
-    </header>
+<header class="page-header">
+    <h1>Pack 3963 Photos</h1>
+    <p>Explore pictures from campouts, Pinewood Derby, den meetings, and pack events.</p>
+</header>
 
-    <section class="placeholder-gallery">
-        <div class="placeholder-box">
-            <p>📸 Photos will be added soon!</p>
-        </div>
-    </section>
+<section class="section">
+  <div class="section-inner">
+
+    <div class="gallery-grid">
+      {% for photo in site.data.photos.photos %}
+        <img 
+          src="assets/images/{{ photo.file }}" 
+          alt="Pack 3963 Photo"
+        />
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
 
 </body>
 </html>
