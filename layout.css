@@ -31,9 +31,8 @@
    ========================================= */
 .hero-header {
   width: 100%;
-  min-height: 320px; /* allow natural expansion */
-  overflow: visible; /* DO NOT CLIP ANYTHING */
-  position: relative; /* ensures stacking works */
+  height: 360px;
+  overflow: hidden;
 }
 
 .hero-image-wrapper {
@@ -45,7 +44,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top; /* matches style.css behavior */
+  object-position: center;
 }
 
 /* =========================================
