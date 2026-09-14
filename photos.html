@@ -1,7 +1,7 @@
 ---
 layout: none
 title: "Photos – Cub Scout Pack 3963"
-description: "Photo gallery for Cub Scout Pack 3963 in Chicago, IL. Pictures from campouts, Pinewood Derby, den meetings, and pack events."
+description: "Photo gallery for Cub Scout Pack 3963 in Chicago, IL."
 ---
 
 <!DOCTYPE html>
@@ -19,6 +19,70 @@ description: "Photo gallery for Cub Scout Pack 3963 in Chicago, IL. Pictures fro
     <link rel="stylesheet" href="forms.css">
     <link rel="stylesheet" href="responsive.css">
 
+    <!-- Lightbox CSS -->
+    <style>
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+      }
+
+      .gallery-grid img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+      }
+
+      .gallery-grid img:hover {
+        transform: scale(1.03);
+      }
+
+      /* Lightbox */
+      .lightbox {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.9);
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+
+      .lightbox img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 8px;
+      }
+
+      .lightbox-controls {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+        color: white;
+        font-size: 3rem;
+        font-weight: bold;
+        padding: 0 30px;
+        user-select: none;
+        cursor: pointer;
+      }
+
+      .lightbox-close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 3rem;
+        color: white;
+        cursor: pointer;
+      }
+    </style>
+
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5E98N12ZK1"></script>
     <script>
@@ -31,10 +95,7 @@ description: "Photo gallery for Cub Scout Pack 3963 in Chicago, IL. Pictures fro
 
 <body>
 
-<!-- Top Announcement Banner -->
 {% include announcement.html %}
-
-<!-- Navigation -->
 {% include nav.html %}
 
 <header class="page-header">
@@ -45,17 +106,77 @@ description: "Photo gallery for Cub Scout Pack 3963 in Chicago, IL. Pictures fro
 <section class="section">
   <div class="section-inner">
 
+    <!-- Gallery Grid -->
     <div class="gallery-grid">
       {% for photo in site.data.photos.photos %}
         <img 
           src="assets/images/{{ photo.file }}" 
           alt="Pack 3963 Photo"
+          data-index="{{ forloop.index0 }}"
         />
       {% endfor %}
     </div>
 
+    <!-- Lightbox Viewer -->
+    <div class="lightbox" id="lightbox">
+      <span class="lightbox-close" id="lightbox-close">&times;</span>
+      <div class="lightbox-controls">
+        <span id="lightbox-prev">&#10094;</span>
+        <span id="lightbox-next">&#10095;</span>
+      </div>
+      <img id="lightbox-img" src="" alt="">
+    </div>
+
   </div>
 </section>
+
+<!-- Lightbox Script -->
+<script>
+  const images = Array.from(document.querySelectorAll('.gallery-grid img'));
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeBtn = document.getElementById('lightbox-close');
+  const prevBtn = document.getElementById('lightbox-prev');
+  const nextBtn = document.getElementById('lightbox-next');
+
+  let currentIndex = 0;
+
+  function openLightbox(index) {
+    currentIndex = index;
+    lightboxImg.src = images[index].src;
+    lightbox.style.display = 'flex';
+  }
+
+  function closeLightbox() {
+    lightbox.style.display = 'none';
+  }
+
+  function showNext() {
+    currentIndex = (currentIndex + 1) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+  }
+
+  function showPrev() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+  }
+
+  images.forEach((img, index) => {
+    img.addEventListener('click', () => openLightbox(index));
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+  nextBtn.addEventListener('click', showNext);
+  prevBtn.addEventListener('click', showPrev);
+
+  document.addEventListener('keydown', (e) => {
+    if (lightbox.style.display === 'flex') {
+      if (e.key === 'ArrowRight') showNext();
+      if (e.key === 'ArrowLeft') showPrev();
+      if (e.key === 'Escape') closeLightbox();
+    }
+  });
+</script>
 
 </body>
 </html>
