@@ -31,7 +31,7 @@
    ========================================= */
 .hero-header {
   width: 100%;
-  height: 360px;
+  height: 320px; /* slightly smaller, more flexible */
   overflow: hidden;
 }
 
@@ -39,7 +39,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center; /* permanent fix */
+  object-position: top center; /* prevents head/hand cropping */
 }
 
 /* =========================================
