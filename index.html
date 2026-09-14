@@ -1,5 +1,3 @@
----
----
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,19 +13,29 @@
   <meta name="keywords" content="Cub Scouts Chicago, Pack 3963, Jefferson Park Scouts, Portage Park Scouts, Chicago youth programs, Cub Scout Pack, Scouting Chicago, kids activities Chicago, Northwest Side Chicago Scouts">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" href="base.css">
-<link rel="stylesheet" href="layout.css">
-<link rel="stylesheet" href="components.css">
-<link rel="stylesheet" href="forms.css">
-<link rel="stylesheet" href="responsive.css">
-<link rel="stylesheet" href="style.css">
+
+  <!-- Modular CSS System -->
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="components.css">
+  <link rel="stylesheet" href="forms.css">
+  <link rel="stylesheet" href="responsive.css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5E98N12ZK1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5E98N12ZK1');
+  </script>
 
 </head>
 
 <body>
 
   <!-- Top Announcement Banner -->
-{% include announcement.html %}
+  {% include announcement.html %}
 
   <!-- Navigation -->
   <nav class="main-nav">
@@ -89,30 +97,29 @@
         </div>
 
         <!-- ============================
-     NEW SCOUT FLYER SECTION
-     ============================ -->
-<div class="callout-box" style="margin-top: 30px;">
-  <h2>New Scout Welcome Flyer</h2>
-  <p>
-    Our official Pack 3963 flyer gives families a quick overview of Cub Scout ranks, activities,
-    and what to expect throughout the year. You can view it right here or download a copy to share.
-  </p>
+             NEW SCOUT FLYER SECTION
+             ============================ -->
+        <div class="callout-box callout-flyer">
+          <h2>New Scout Welcome Flyer</h2>
+          <p>
+            Our official Pack 3963 flyer gives families a quick overview of Cub Scout ranks, activities,
+            and what to expect throughout the year. You can view it right here or download a copy to share.
+          </p>
 
-  <!-- Embedded Flyer Image -->
-  <div style="text-align: center; margin: 20px 0;">
-    <img 
-      src="assets/images/flyer.png" 
-      alt="Pack 3963 Cub Scout Welcome Flyer" 
-      style="max-width: 100%; border-radius: 6px; box-shadow: 0 0 10px rgba(0,0,0,0.15);"
-    >
-  </div>
+          <!-- Embedded Flyer Image -->
+          <div class="flyer-image-wrapper">
+            <img 
+              src="assets/images/flyer.png" 
+              alt="Pack 3963 Cub Scout Welcome Flyer" 
+              class="flyer-image"
+            >
+          </div>
 
-  <!-- Download Button -->
-  <a href="assets/docs/flyer.pdf" class="btn-blue" target="_blank">
-    Download Flyer (PDF)
-  </a>
-</div>
-
+          <!-- Download Button -->
+          <a href="assets/docs/flyer.pdf" class="btn-blue" target="_blank">
+            Download Flyer (PDF)
+          </a>
+        </div>
 
         <p>
           Our Pack meets monthly during the school year, with den meetings scheduled by each den leader.
