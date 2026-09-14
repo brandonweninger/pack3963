@@ -12,13 +12,24 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
+
+  <!-- ============================
+       GOOGLE ANALYTICS (GA4)
+       ============================ -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5E98N12ZK1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5E98N12ZK1');
+  </script>
+
 </head>
 
 <body>
 
   <!-- Top Announcement Banner -->
-{% include announcement.html %}
-
+  {% include announcement.html %}
 
   <!-- Navigation -->
   <nav class="main-nav">
@@ -56,6 +67,11 @@
         The Lion program is designed for kindergarten‑age children who are just beginning their Cub Scout journey.
         At Pack 3963, Lion focuses on simple, fun, family‑centered adventures that introduce Scouts to the values
         and excitement of Scouting in an age‑appropriate way.
+      </p>
+
+      <p>
+        Pack 3963 meets at <strong>Eden United Church of Christ</strong>, located at 
+        <strong>5051 W Gunnison St, Chicago, IL 60630</strong>.
       </p>
 
       <p>
@@ -156,7 +172,10 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <p>&copy; <span id="year"></span> Cub Scout Pack 3963 — Chicago, IL</p>
+      <p>
+        &copy; <span id="year"></span> Cub Scout Pack 3963 — Chicago, IL<br>
+        <strong>Meeting Location:</strong> Eden United Church of Christ, 5051 W Gunnison St, Chicago, IL 60630
+      </p>
     </div>
   </footer>
 
