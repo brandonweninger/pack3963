@@ -3,17 +3,15 @@
    ========================================= */
 .contact-form {
   background: var(--light-gray);
-  padding: 0; /* remove padding so iframe fills space */
+  padding: 0;
   border-radius: 6px;
   border: 1px solid var(--light-gray);
-  overflow: hidden; /* ensures iframe edges look clean */
-  max-width: 900px; /* matches section-inner width */
-  margin: 0 auto 30px auto; /* centers form and adds spacing */
+  overflow: hidden;
 }
 
 .contact-form iframe {
   width: 100%;
-  min-height: 900px; /* more natural height */
+  min-height: 900px;
   border: none;
   display: block;
 }
