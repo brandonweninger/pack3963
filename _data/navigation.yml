@@ -1,0 +1,23 @@
+- name: Home
+  url: /index.html
+
+- name: Dens
+  url: /dens.html
+
+- name: Events
+  url: /events.html
+
+- name: Leadership
+  url: /leadership.html
+
+- name: Resources
+  url: /resources.html
+
+- name: Photos
+  url: /photos.html
+
+- name: Contact
+  url: /contact.html
+
+- name: Join
+  url: /join.html
