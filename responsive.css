@@ -1,0 +1,57 @@
+/* =========================================
+   TABLET & MOBILE
+   ========================================= */
+@media (max-width: 768px) {
+
+  .nav-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+  }
+
+  .hero-header {
+    height: 220px;
+  }
+
+  .hero-image {
+    object-position: top center;
+  }
+
+  .two-column {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .section {
+    padding: 25px 15px;
+  }
+
+  .btn-blue {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* =========================================
+   SMALL PHONES
+   ========================================= */
+@media (max-width: 480px) {
+
+  .hero-header {
+    height: 180px;
+  }
+
+  .nav-logo {
+    font-size: 1.2rem;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.3rem;
+  }
+}
