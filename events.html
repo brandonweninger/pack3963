@@ -16,13 +16,24 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
+
+  <!-- ============================
+       GOOGLE ANALYTICS (GA4)
+       ============================ -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5E98N12ZK1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5E98N12ZK1');
+  </script>
+
 </head>
 
 <body>
 
   <!-- Top Announcement Banner -->
-{% include announcement.html %}
-
+  {% include announcement.html %}
 
   <!-- Navigation -->
   <nav class="main-nav">
@@ -62,6 +73,11 @@
         grow, and have fun.
       </p>
 
+      <p>
+        Pack 3963 meets at <strong>Eden United Church of Christ</strong>, located at 
+        <strong>5051 W Gunnison St, Chicago, IL 60630</strong>.
+      </p>
+
       <!-- ============================
            UPCOMING EVENTS
            ============================ -->
@@ -70,23 +86,23 @@
       <div class="callout-box">
         <h3>September 19 – First Pack Meeting & Open House</h3>
         <p><strong>Time:</strong> 9:30 AM</p>
-        <p><strong>Location:</strong> Eden United Church of Chicago</p>
+        <p><strong>Location:</strong> Eden United Church of Christ</p>
         <p>
           Join us for our first meeting of the year! New families are welcome to meet our leaders,
           learn about Cub Scouts, and sign up for the 2026–2027 program year.
         </p>
       </div>
-      
-<div class="callout-box">
-  <h3>October 10–12 – Fall Camping Trip at White Pines</h3>
-  <p><strong>Time:</strong> Weekend Overnight Trip</p>
-  <p><strong>Location:</strong> White Pines State Park, Illinois</p>
-  <p>
-    Our annual Fall Camping Trip is one of the biggest adventures of the year! Scouts and families will enjoy 
-    hiking, campfire cooking, outdoor skills, nature exploration, and plenty of time together in one of Illinois’ 
-    most beautiful state parks. This is a perfect opportunity for new families to experience Cub Scout camping.
-  </p>
-</div>
+
+      <div class="callout-box">
+        <h3>October 10–12 – Fall Camping Trip at White Pines</h3>
+        <p><strong>Time:</strong> Weekend Overnight Trip</p>
+        <p><strong>Location:</strong> White Pines State Park, Illinois</p>
+        <p>
+          Our annual Fall Camping Trip is one of the biggest adventures of the year! Scouts and families will enjoy 
+          hiking, campfire cooking, outdoor skills, nature exploration, and plenty of time together in one of Illinois’ 
+          most beautiful state parks. This is a perfect opportunity for new families to experience Cub Scout camping.
+        </p>
+      </div>
 
       <!-- ============================
            YEAR-ROUND ACTIVITIES
@@ -116,7 +132,10 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <p>&copy; <span id="year"></span> Cub Scout Pack 3963 — Chicago, IL</p>
+      <p>
+        &copy; <span id="year"></span> Cub Scout Pack 3963 — Chicago, IL<br>
+        <strong>Meeting Location:</strong> Eden United Church of Christ, 5051 W Gunnison St, Chicago, IL 60630
+      </p>
     </div>
   </footer>
 
