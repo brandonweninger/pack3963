@@ -7,12 +7,6 @@
   padding: 12px 20px;
   text-align: center;
   font-weight: 600;
-
-  /* Prevent margin collapse + clipping */
-  display: block;
-  position: relative;
-  z-index: 1000;
-  margin: 0;
 }
 
 .btn-gold {
@@ -53,6 +47,14 @@
 }
 
 /* =========================================
+   FEATURE LISTS
+   ========================================= */
+.feature-list {
+  list-style: square;
+  margin-left: 20px;
+}
+
+/* =========================================
    ACCORDION
    ========================================= */
 .accordion {
@@ -86,4 +88,9 @@
 .accordion input:checked ~ .accordion-content {
   max-height: 500px;
   padding: 20px;
+}
+
+.accordion-content ul {
+  margin-left: 20px;
+  line-height: 1.7;
 }
