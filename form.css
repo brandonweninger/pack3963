@@ -1,13 +1,26 @@
 /* =========================================
-   CONTACT FORM
+   CONTACT FORM (supports embedded Google Forms)
    ========================================= */
 .contact-form {
   background: var(--light-gray);
-  padding: 25px;
+  padding: 0; /* remove padding so iframe fills space */
   border-radius: 6px;
   border: 1px solid var(--light-gray);
+  overflow: hidden; /* ensures iframe edges look clean */
+  max-width: 900px; /* matches section-inner width */
+  margin: 0 auto 30px auto; /* centers form and adds spacing */
 }
 
+.contact-form iframe {
+  width: 100%;
+  min-height: 900px; /* more natural height */
+  border: none;
+  display: block;
+}
+
+/* =========================================
+   CONTACT FORM (native fields, if used)
+   ========================================= */
 .contact-form .form-group {
   margin-bottom: 20px;
 }
