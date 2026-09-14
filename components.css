@@ -1,0 +1,63 @@
+/* =========================================
+   BUTTONS
+   ========================================= */
+.btn-blue {
+  background: var(--blue);
+  color: var(--white);
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-blue:hover {
+  background: #002d63;
+}
+
+/* =========================================
+   CALLOUT BOXES
+   ========================================= */
+.callout-box {
+  background: var(--light-gray);
+  padding: 20px;
+  border-radius: 6px;
+  margin: 25px 0;
+  border-left: 6px solid var(--blue);
+}
+
+/* =========================================
+   ACCORDION
+   ========================================= */
+.accordion {
+  margin: 20px 0;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--light-gray);
+}
+
+.accordion input {
+  display: none;
+}
+
+.accordion-label {
+  display: block;
+  padding: 15px 20px;
+  background: var(--blue);
+  color: var(--white);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  background: var(--light-gray);
+  transition: max-height 0.3s ease;
+  padding: 0 20px;
+}
+
+.accordion input:checked ~ .accordion-content {
+  max-height: 500px;
+  padding: 20px;
+}
