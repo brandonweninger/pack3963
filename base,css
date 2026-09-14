@@ -1,0 +1,53 @@
+/* =========================================
+   VARIABLES
+   ========================================= */
+:root {
+  --blue: #003F87;
+  --gold: #FFCC00;
+  --white: #FFFFFF;
+  --light-gray: #F5F5F5;
+  --dark-gray: #444444;
+  --accent-red: #C60C30;
+
+  /* Design system */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 40px;
+  --space-xl: 60px;
+
+  --font-sm: 0.9rem;
+  --font-md: 1rem;
+  --font-lg: 1.3rem;
+  --font-xl: 2rem;
+}
+
+/* =========================================
+   RESET
+   ========================================= */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--white);
+  color: var(--dark-gray);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1, h2, h3 {
+  color: var(--blue);
+  margin-top: 0;
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
