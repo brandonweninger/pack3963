@@ -1,0 +1,54 @@
+media:
+  - name: pack_photos
+    label: Pack Photos
+    input: assets/images/pack3963photos
+    output: /assets/images/pack3963photos
+    categories: [image]
+    extensions: [jpg, jpeg, png, webp]
+    rename: safe
+    commit:
+      templates:
+        create: "chore(photos): upload {filename}"
+        update: "chore(photos): update {filename}"
+        delete: "chore(photos): remove {filename}"
+        rename: "chore(photos): rename {oldFilename} to {newFilename}"
+
+content:
+  - name: photo_gallery
+    label: Photo Gallery
+    type: file
+    path: _data/photos.yml
+    format: yaml
+    fields:
+      - name: photos
+        label: Published Photos
+        type: object
+        list: true
+        fields:
+          - name: file
+            label: Photo
+            type: image
+            required: true
+            options:
+              media: pack_photos
+              categories: [image]
+              extensions: [jpg, jpeg, png, webp]
+              rename: safe
+          - name: caption
+            label: Caption
+            type: string
+            required: false
+          - name: alt
+            label: Image Description
+            type: string
+            required: true
+          - name: date
+            label: Event Date
+            type: date
+            required: false
+
+settings:
+  commit:
+    identity: user
+    templates:
+      update: "content(photos): update gallery"
