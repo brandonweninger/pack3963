@@ -1,10 +1,19 @@
 photos:
-  - file: pack3963photos/IMG_0991.JPG
-  - file: pack3963photos/IMG_0997.JPG
-  - file: pack3963photos/IMG_1002.JPG
-  - file: pack3963photos/IMG_1004.JPG
-  - file: pack3963photos/IMG_1009.JPG
-  - file: pack3963photos/IMG_1012.JPG
-  - file: pack3963photos/IMG_1013.JPG
-  - file: pack3963photos/IMG_1015.JPG
-  - file: pack3963photos/IMG_3520.jpeg
+  - file: /assets/images/pack3963photos/IMG_0991.JPG
+    alt: Pack 3963 activity photo
+  - file: /assets/images/pack3963photos/IMG_0997.JPG
+    alt: Pack 3963 activity photo
+  - file: /assets/images/pack3963photos/IMG_1002.JPG
+    alt: Pack 3963 activity photo
+  - file: /assets/images/pack3963photos/IMG_1004.JPG
+    alt: Pack 3963 activity photo
+  - file: /assets/images/pack3963photos/IMG_1009.JPG
+    alt: Pack 3963 activity photo
+  - file: /assets/images/pack3963photos/IMG_1012.JPG
+    alt: Pack 3963 activity photo
+  - file: /assets/images/pack3963photos/IMG_1013.JPG
+    alt: Pack 3963 activity photo
+  - file: /assets/images/pack3963photos/IMG_1015.JPG
+    alt: Pack 3963 activity photo
+  - file: /assets/images/pack3963photos/IMG_3520.jpeg
+    alt: Pack 3963 activity photo
