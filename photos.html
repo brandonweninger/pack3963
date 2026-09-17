@@ -28,6 +28,10 @@ description: "Photo gallery for Cub Scout Pack 3963 in Chicago, IL."
         margin-top: 30px;
       }
 
+      .gallery-item {
+        margin: 0;
+      }
+
       .gallery-grid img {
         width: 100%;
         height: 180px;
@@ -39,6 +43,19 @@ description: "Photo gallery for Cub Scout Pack 3963 in Chicago, IL."
 
       .gallery-grid img:hover {
         transform: scale(1.03);
+      }
+
+      .gallery-caption {
+        margin-top: 8px;
+        color: #333;
+        font-size: 0.95rem;
+      }
+
+      .gallery-date {
+        display: block;
+        margin-top: 3px;
+        color: #666;
+        font-size: 0.85rem;
       }
 
       /* Lightbox */
@@ -109,11 +126,24 @@ description: "Photo gallery for Cub Scout Pack 3963 in Chicago, IL."
     <!-- Gallery Grid -->
     <div class="gallery-grid">
       {% for photo in site.data.photos.photos %}
-        <img 
-          src="assets/images/{{ photo.file }}" 
-          alt="Pack 3963 Photo"
-          data-index="{{ forloop.index0 }}"
-        />
+        <figure class="gallery-item">
+          <img
+            src="{{ photo.file | relative_url }}"
+            alt="{{ photo.alt | default: 'Pack 3963 activity photo' | escape }}"
+            data-index="{{ forloop.index0 }}"
+            loading="lazy"
+          />
+          {% if photo.caption or photo.date %}
+            <figcaption class="gallery-caption">
+              {% if photo.caption %}{{ photo.caption }}{% endif %}
+              {% if photo.date %}
+                <time class="gallery-date" datetime="{{ photo.date | date: '%Y-%m-%d' }}">
+                  {{ photo.date | date: "%B %-d, %Y" }}
+                </time>
+              {% endif %}
+            </figcaption>
+          {% endif %}
+        </figure>
       {% endfor %}
     </div>
 
