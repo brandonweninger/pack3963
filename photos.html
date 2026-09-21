@@ -16,7 +16,7 @@ description: "Photo gallery for Cub Scout Pack 3963 in Chicago, IL."
     <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="layout.css">
     <link rel="stylesheet" href="components.css">
-    <link rel="stylesheet" href="forms.css">
+    <link rel="stylesheet" href="form.css">
     <link rel="stylesheet" href="responsive.css">
 
     <!-- Lightbox CSS -->
@@ -32,16 +32,31 @@ description: "Photo gallery for Cub Scout Pack 3963 in Chicago, IL."
         margin: 0;
       }
 
+      .gallery-trigger {
+        display: block;
+        width: 100%;
+        padding: 0;
+        border: 0;
+        border-radius: 6px;
+        background: transparent;
+        cursor: pointer;
+      }
+
+      .gallery-trigger:focus-visible,
+      .lightbox-control:focus-visible {
+        outline: 3px solid var(--gold);
+        outline-offset: 3px;
+      }
+
       .gallery-grid img {
         width: 100%;
         height: 180px;
         object-fit: cover;
         border-radius: 6px;
-        cursor: pointer;
         transition: 0.2s ease-in-out;
       }
 
-      .gallery-grid img:hover {
+      .gallery-trigger:hover img {
         transform: scale(1.03);
       }
 
@@ -60,13 +75,17 @@ description: "Photo gallery for Cub Scout Pack 3963 in Chicago, IL."
 
       /* Lightbox */
       .lightbox {
-        display: none;
         position: fixed;
         inset: 0;
         background: rgba(0,0,0,0.9);
+        display: flex;
         justify-content: center;
         align-items: center;
         z-index: 9999;
+      }
+
+      .lightbox[hidden] {
+        display: none;
       }
 
       .lightbox img {
@@ -87,7 +106,7 @@ description: "Photo gallery for Cub Scout Pack 3963 in Chicago, IL."
         font-weight: bold;
         padding: 0 30px;
         user-select: none;
-        cursor: pointer;
+        pointer-events: none;
       }
 
       .lightbox-close {
@@ -95,8 +114,19 @@ description: "Photo gallery for Cub Scout Pack 3963 in Chicago, IL."
         top: 20px;
         right: 30px;
         font-size: 3rem;
+      }
+
+      .lightbox-control {
+        border: 0;
+        background: transparent;
         color: white;
+        font: inherit;
         cursor: pointer;
+        pointer-events: auto;
+      }
+
+      body.lightbox-open {
+        overflow: hidden;
       }
     </style>
 
@@ -127,12 +157,20 @@ description: "Photo gallery for Cub Scout Pack 3963 in Chicago, IL."
     <div class="gallery-grid">
       {% for photo in site.data.photos.photos %}
         <figure class="gallery-item">
-          <img
-            src="{{ photo.file | relative_url }}"
-            alt="{{ photo.alt | default: 'Pack 3963 activity photo' | escape }}"
+          <button
+            class="gallery-trigger"
             data-index="{{ forloop.index0 }}"
-            loading="lazy"
-          />
+            type="button"
+            aria-label="Open photo: {{ photo.alt | escape }}"
+          >
+            <img
+              src="{{ photo.file | relative_url }}"
+              alt="{{ photo.alt | escape }}"
+              loading="lazy"
+              width="836"
+              height="627"
+            />
+          </button>
           {% if photo.caption or photo.date %}
             <figcaption class="gallery-caption">
               {% if photo.caption %}{{ photo.caption }}{% endif %}
@@ -148,11 +186,19 @@ description: "Photo gallery for Cub Scout Pack 3963 in Chicago, IL."
     </div>
 
     <!-- Lightbox Viewer -->
-    <div class="lightbox" id="lightbox">
-      <span class="lightbox-close" id="lightbox-close">&times;</span>
+    <div
+      class="lightbox"
+      id="lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Photo viewer"
+      aria-hidden="true"
+      hidden
+    >
+      <button class="lightbox-close lightbox-control" id="lightbox-close" type="button" aria-label="Close photo viewer">&times;</button>
       <div class="lightbox-controls">
-        <span id="lightbox-prev">&#10094;</span>
-        <span id="lightbox-next">&#10095;</span>
+        <button class="lightbox-control" id="lightbox-prev" type="button" aria-label="Previous photo">&#10094;</button>
+        <button class="lightbox-control" id="lightbox-next" type="button" aria-label="Next photo">&#10095;</button>
       </div>
       <img id="lightbox-img" src="" alt="">
     </div>
@@ -162,7 +208,8 @@ description: "Photo gallery for Cub Scout Pack 3963 in Chicago, IL."
 
 <!-- Lightbox Script -->
 <script>
-  const images = Array.from(document.querySelectorAll('.gallery-grid img'));
+  const triggers = Array.from(document.querySelectorAll('.gallery-trigger'));
+  const images = triggers.map((trigger) => trigger.querySelector('img'));
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const closeBtn = document.getElementById('lightbox-close');
@@ -170,40 +217,66 @@ description: "Photo gallery for Cub Scout Pack 3963 in Chicago, IL."
   const nextBtn = document.getElementById('lightbox-next');
 
   let currentIndex = 0;
+  let lastFocusedElement = null;
+
+  function updateLightboxImage() {
+    lightboxImg.src = images[currentIndex].src;
+    lightboxImg.alt = images[currentIndex].alt;
+  }
 
   function openLightbox(index) {
     currentIndex = index;
-    lightboxImg.src = images[index].src;
-    lightbox.style.display = 'flex';
+    lastFocusedElement = document.activeElement;
+    updateLightboxImage();
+    lightbox.hidden = false;
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('lightbox-open');
+    closeBtn.focus();
   }
 
   function closeLightbox() {
-    lightbox.style.display = 'none';
+    lightbox.hidden = true;
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('lightbox-open');
+    lightboxImg.src = '';
+    lightboxImg.alt = '';
+    if (lastFocusedElement) lastFocusedElement.focus();
   }
 
   function showNext() {
     currentIndex = (currentIndex + 1) % images.length;
-    lightboxImg.src = images[currentIndex].src;
+    updateLightboxImage();
   }
 
   function showPrev() {
     currentIndex = (currentIndex - 1 + images.length) % images.length;
-    lightboxImg.src = images[currentIndex].src;
+    updateLightboxImage();
   }
 
-  images.forEach((img, index) => {
-    img.addEventListener('click', () => openLightbox(index));
+  triggers.forEach((trigger, index) => {
+    trigger.addEventListener('click', () => openLightbox(index));
   });
 
   closeBtn.addEventListener('click', closeLightbox);
   nextBtn.addEventListener('click', showNext);
   prevBtn.addEventListener('click', showPrev);
+  lightbox.addEventListener('click', (event) => {
+    if (event.target === lightbox) closeLightbox();
+  });
 
   document.addEventListener('keydown', (e) => {
-    if (lightbox.style.display === 'flex') {
+    if (!lightbox.hidden) {
       if (e.key === 'ArrowRight') showNext();
       if (e.key === 'ArrowLeft') showPrev();
       if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'Tab') {
+        const controls = [closeBtn, prevBtn, nextBtn];
+        const currentPosition = controls.indexOf(document.activeElement);
+        const direction = e.shiftKey ? -1 : 1;
+        const nextPosition = (currentPosition + direction + controls.length) % controls.length;
+        e.preventDefault();
+        controls[nextPosition].focus();
+      }
     }
   });
 </script>
