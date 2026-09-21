@@ -20,7 +20,7 @@ description: "Learn how to join Cub Scout Pack 3963 in Chicago, IL. View our wel
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="layout.css">
   <link rel="stylesheet" href="components.css">
-  <link rel="stylesheet" href="forms.css">
+  <link rel="stylesheet" href="form.css">
   <link rel="stylesheet" href="responsive.css">
 </head>
 
@@ -29,21 +29,7 @@ description: "Learn how to join Cub Scout Pack 3963 in Chicago, IL. View our wel
   {% include announcement.html %}
 
   <!-- Navigation -->
-  <nav class="main-nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">Pack 3963</a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="dens.html">Dens</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="leadership.html">Leadership</a></li>
-        <li><a href="resources.html">Resources</a></li>
-        <li><a href="photos.html">Photos</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="join.html">Join</a></li>
-      </ul>
-    </div>
-  </nav>
+  {% include nav.html %}
 
   <!-- Hero Header -->
   <header class="hero-header">
@@ -85,7 +71,7 @@ description: "Learn how to join Cub Scout Pack 3963 in Chicago, IL. View our wel
         </div>
 
         <p style="margin-top: 15px;">
-          <a href="assets/images/flyer.pdf" class="btn-blue" target="_blank">
+          <a href="assets/docs/flyer.pdf" class="btn-blue" target="_blank" rel="noopener noreferrer">
             Download Flyer (PDF)
           </a>
         </p>
@@ -105,6 +91,7 @@ description: "Learn how to join Cub Scout Pack 3963 in Chicago, IL. View our wel
           href="https://my.scouting.org/online-registration/7b1b6fb8-d1db-4455-a64a-475521e8f1fb/applicant-type" 
           class="btn-blue" 
           target="_blank"
+          rel="noopener noreferrer"
         >
           Register for Cub Scouts
         </a>

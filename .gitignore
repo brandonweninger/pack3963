@@ -1,0 +1,12 @@
+# macOS metadata
+.DS_Store
+**/.DS_Store
+
+# Jekyll build artifacts
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# Bundler dependencies
+.bundle/
+vendor/
