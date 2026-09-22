@@ -4,15 +4,20 @@ This repository contains the public website for Cub Scout Pack 3963 in Chicago. 
 
 ## Site structure
 
-- `index.html` and the other top-level HTML files are the public pages.
-- `_includes/` contains shared navigation and announcement markup.
+- `index.html` and the other top-level HTML files contain each page's unique content.
+- `_layouts/default.html` contains the shared document head, analytics, navigation, and footer.
+- `_includes/` contains shared navigation, announcement, and footer markup.
+- `_data/pack.yml` is the source of truth for contact, meeting, registration, and analytics details.
+- `_data/events.yml` controls the event list, home-page feature, and announcement banner.
 - `_data/navigation.yml` controls the site-wide navigation menu.
 - `_data/photos.yml` controls which images appear in the photo gallery.
-- `_config.yml` contains Jekyll settings and the site-wide announcement.
+- `_config.yml` contains Jekyll settings and enables or disables the announcement.
 - `assets/docs/` contains downloadable PDFs.
 - `assets/images/pack3963photos/` contains web-ready gallery images.
 - `base.css`, `layout.css`, `components.css`, `form.css`, and `responsive.css` make up the modular stylesheet system.
-- `.pages.yml` configures the Pages CMS photo editor used by Pack leadership.
+- `gallery.css` and `assets/js/gallery.js` contain the gallery presentation and lightbox behavior.
+- `.pages.yml` lets Pack leadership edit Pack settings, events, and photos through Pages CMS.
+- `.github/workflows/site-checks.yml` builds and validates every pull request automatically.
 
 ## Run the site locally
 
@@ -31,12 +36,11 @@ Open `http://localhost:4000` in a browser. Jekyll watches the files and rebuilds
 
 ### Change the announcement
 
-Edit these values in `_config.yml`:
+The announcement comes from the event marked `featured: true` in `_data/events.yml`. Edit its `announcement` value in Pages CMS or YAML. Use `_config.yml` only to enable or disable the banner:
 
 ```yaml
 announcement_enabled: true
-announcement_text: "Your announcement"
-announcement_link: "events.html"
+announcement_link: "/events.html"
 ```
 
 Set `announcement_enabled` to `false` to hide the banner.
@@ -45,9 +49,17 @@ Set `announcement_enabled` to `false` to hide the banner.
 
 Edit `_data/navigation.yml`. Because the pages use `_includes/nav.html`, one change updates the navigation across the site.
 
-### Update events or page content
+### Change Pack contact or meeting details
 
-Edit the relevant top-level HTML file, such as `events.html`, `join.html`, or `resources.html`. Keep the existing YAML front matter at the top of each page.
+Edit `_data/pack.yml` or select **Pack Settings** in Pages CMS. These values update every page and the shared footer.
+
+### Update events
+
+Edit `_data/events.yml` or select **Events** in Pages CMS. The Events page is generated from this file. The single event marked as featured also appears on the home page and supplies the announcement banner.
+
+### Update page content
+
+Edit the relevant top-level HTML file, such as `join.html` or `resources.html`. Keep the YAML front matter and `layout: default` at the top of each page. Shared document markup belongs in `_layouts/default.html` or an include.
 
 ### Add or manage photos
 
@@ -73,6 +85,8 @@ git push -u origin update/short-description
 ```
 
 Open a pull request on GitHub, review the preview or checks, and merge it into `main`. Allow GitHub Pages a few minutes to rebuild the public site.
+
+The **Site checks** workflow builds the Jekyll site and runs `scripts/validate_site.rb`. It catches missing local links, incomplete event/photo data, unsafe new-tab links, duplicate page wrappers, and unwanted repository files.
 
 ## Before opening a pull request
 

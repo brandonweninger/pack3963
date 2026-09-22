@@ -1,47 +1,14 @@
 ---
+layout: default
+title: Parent Resource Guide – Cub Scout Pack 3963 | Chicago, IL
+description: Parent Resource Guide for Cub Scout Pack 3963 in Chicago, IL. Learn how our pack communicates, meeting expectations, uniforms, advancement, safety, and how families can participate.
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
 
-    <title>Parent Resource Guide – Cub Scout Pack 3963 | Chicago, IL</title>
-
-    <meta name="description" content="Parent Resource Guide for Cub Scout Pack 3963 in Chicago, IL. Learn how our pack communicates, meeting expectations, uniforms, advancement, safety, and how families can participate.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-      <!-- Modular CSS System -->
-  <link rel="stylesheet" href="base.css">
-  <link rel="stylesheet" href="layout.css">
-  <link rel="stylesheet" href="components.css">
-  <link rel="stylesheet" href="form.css">
-  <link rel="stylesheet" href="responsive.css">
-
-    <!-- ============================
-         GOOGLE ANALYTICS (GA4)
-         ============================ -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5E98N12ZK1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-5E98N12ZK1');
-    </script>
-</head>
-
-<body>
-
-<!-- Top Announcement Banner -->
-{% include announcement.html %}
-
-<!-- Navigation -->
-{% include nav.html %}
-
-    <!-- Hero Header -->
+<!-- Hero Header -->
     <header class="hero-header">
         <div class="hero-image-wrapper">
-            <img 
-                src="assets/images/troopheader.png" 
+            <img
+                src="assets/images/troopheader.png"
                 alt="Cub Scout Pack 3963 – Chicago, IL"
                 class="hero-image"
             />
@@ -57,8 +24,8 @@
         <div class="section-inner">
 
             <p>
-                Pack 3963 meets at <strong>Eden United Church of Christ</strong>, located at 
-                <strong>5051 W Gunnison St, Chicago, IL 60630</strong>.
+                Pack 3963 meets at <strong>{{ site.data.pack.meeting.venue }}</strong>, located at
+                <strong>{{ site.data.pack.meeting.street }}, {{ site.data.pack.meeting.city_state_zip }}</strong>.
             </p>
 
             <section class="content-section">
@@ -123,20 +90,3 @@
 
         </div>
     </main>
-
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-inner">
-            <p>
-                &copy; <span id="year"></span> Cub Scout Pack 3963 — Chicago, IL<br>
-                <strong>Meeting Location:</strong> Eden United Church of Christ, 5051 W Gunnison St, Chicago, IL 60630
-            </p>
-        </div>
-    </footer>
-
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
-</body>
-</html>
