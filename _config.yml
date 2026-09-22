@@ -9,3 +9,4 @@ announcement_link: "/events.html"
 exclude:
   - README.md
   - scripts
+  - vendor
