@@ -1,4 +1,4 @@
-season: Fall 2026
+season: 2026–27 Season
 events:
   - id: nature-hike-2026
     date: "2026-09-26"
@@ -42,3 +42,143 @@ events:
       will enjoy hiking, campfire cooking, outdoor skills, nature exploration, and time together in
       one of Illinois' most beautiful state parks. This is a perfect opportunity for new families to
       experience Cub Scout camping.
+    signup_label: RSVP for the White Pines campout
+    signup_url: https://docs.google.com/forms/d/e/1FAIpQLScIABukVQSkIWGtBgGsmE7stfsnPLgyfufUGyxnkV7R8CHN4g/viewform?usp=sharing&ouid=109492507988722827764
+  - id: class-b-shirt-size-deadline-2026
+    date: "2026-10-02"
+    date_label: Friday, October 2
+    title: Class B T-Shirt Size Deadline
+    time: Submit by end of day
+    location: Online
+    description: >-
+      New families should send the Pack their Scout's T-shirt size by October 2 so the Class B
+      uniform order can be placed. Pack dues are $50, plus $10 for a Class B shirt if needed.
+  - id: den-meetings-pushmobile-practice-2026
+    date: "2026-10-03"
+    date_label: Saturday, October 3
+    title: Den Meetings, Pushmobile Practice, and Popcorn Sales
+    time: 9:30–11:00 AM
+    location: meeting
+    description: >-
+      Scouts will meet by den, practice for the Pushmobile Race, and participate in door-to-door
+      popcorn sales.
+  - id: den-meetings-regatta-prep-2026
+    date: "2026-10-17"
+    date_label: Saturday, October 17
+    title: Den Meetings and Raingutter Regatta Preparation
+    time: 9:30–11:00 AM
+    location: meeting
+    description: >-
+      Regular den meetings will include preparation for the Pack's November Raingutter Regatta.
+  - id: ptac-pushmobile-race-2026
+    date: "2026-10-24"
+    date_label: Saturday, October 24
+    title: PTAC Pushmobile Race
+    time: 8:30 AM–12:30 PM
+    location: St. Paul Lutheran Church Canfield, 5650 N Canfield Ave, Chicago, IL 60631
+    description: >-
+      Pack 3963 Scouts will participate in the PTAC Pushmobile Race. Please arrive ready to race
+      and support the Pack team.
+  - id: october-popcorn-market-2026
+    date: "2026-10-25"
+    date_label: Sunday, October 25
+    title: Popcorn Sales at Jefferson Park Sunday Market
+    time: 9:30 AM–1:30 PM
+    location: Jefferson (Thomas) Memorial Park
+    description: >-
+      Scouts may volunteer for an optional popcorn-sales shift at the Jefferson Park Sunday Market.
+  - id: tentative-october-activity-2026
+    date: "2026-10-31"
+    date_label: Saturday, October 31
+    title: Tentative Den Meetings or Forest Preserve Stewardship
+    time: 9:30–11:00 AM
+    location: To be confirmed
+    description: >-
+      The Pack calendar currently reserves this morning for den meetings or a possible forest
+      preserve stewardship activity. Final details will be shared when confirmed.
+  - id: miami-woods-stewardship-2026
+    date: "2026-11-15"
+    date_label: Sunday, November 15
+    title: Forest Preserve Stewardship Day
+    time: 10:00 AM–12:00 PM (tentative)
+    location: Miami Woods
+    description: >-
+      Pack families will volunteer with the Friends of the Forest Preserves at Miami Woods.
+      The calendar time is still marked to be confirmed, so watch for final activity details.
+  - id: raingutter-regatta-2026
+    date: "2026-11-21"
+    date_label: Saturday, November 21
+    title: Raingutter Regatta, Awards, and Potluck
+    time: 9:00–11:00 AM
+    location: meeting
+    description: >-
+      Pack 3963 will welcome Pack 3957 for the Raingutter Regatta in Eden Church's fellowship hall.
+      The morning will also include a brief awards and Bobcat ceremony followed by a potluck lunch.
+  - id: tentative-november-activity-2026
+    date: "2026-11-07"
+    date_label: Saturday, November 7
+    title: Tentative Den Meetings or Forest Preserve Stewardship
+    time: To be announced
+    location: To be confirmed
+    description: >-
+      The Pack calendar reserves this date for den meetings or a possible forest preserve
+      stewardship activity. Final plans will be shared when confirmed.
+  - id: november-regatta-prep-2026
+    date: "2026-11-14"
+    date_label: Saturday, November 14
+    title: Den Meetings and Raingutter Regatta Preparation
+    time: 9:30–11:00 AM
+    location: meeting
+    description: >-
+      Scouts will meet by den and finish preparing for the Raingutter Regatta. The calendar also
+      notes a possible forest preserve stewardship activity, pending confirmation.
+  - id: thanksgiving-break-2026
+    date: "2026-11-28"
+    date_label: Saturday, November 28
+    title: No Cub Scout Meeting
+    time: No meeting
+    location: Pack break
+    description: >-
+      Pack 3963 will not meet during Thanksgiving weekend.
+  - id: december-den-meetings-2026
+    date: "2026-12-05"
+    date_label: Saturday, December 5
+    title: Den Meetings
+    time: 9:30–11:00 AM
+    location: To be confirmed
+    description: >-
+      Regular den meetings. Watch for location and activity details from Pack leadership.
+  - id: december-offsite-den-meetings-2026
+    date: "2026-12-12"
+    date_label: Saturday, December 12
+    title: Offsite Den Meetings
+    time: 9:30–11:00 AM
+    location: Offsite location to be announced
+    description: >-
+      Den meetings will take place offsite. Pack leadership will share the location and final
+      activity details closer to the date.
+  - id: holiday-service-project-2026
+    date: "2026-12-19"
+    date_label: Saturday, December 19
+    title: Pack Service Project and Holiday Party
+    time: 9:30–11:00 AM
+    location: meeting
+    description: >-
+      Scouts will assemble bag lunches for a local food pantry, followed by live holiday music and
+      refreshments with Pack families and community members.
+  - id: winter-break-2026
+    date: "2026-12-26"
+    date_label: Saturday, December 26
+    title: No Cub Scout Meeting
+    time: No meeting
+    location: Pack break
+    description: >-
+      Pack 3963 will not meet during the holiday break.
+  - id: new-year-break-2027
+    date: "2027-01-02"
+    date_label: Saturday, January 2
+    title: No Cub Scout Meeting
+    time: No meeting
+    location: Pack break
+    description: >-
+      Pack 3963 will not meet during the New Year holiday weekend.
