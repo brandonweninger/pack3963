@@ -14,6 +14,57 @@ media:
         rename: "chore(photos): rename {oldFilename} to {newFilename}"
 
 content:
+  - name: pack_settings
+    label: Pack Settings
+    type: file
+    path: _data/pack.yml
+    format: yaml
+    fields:
+      - { name: name, label: Pack Name, type: string, required: true }
+      - { name: short_name, label: Short Name, type: string, required: true }
+      - { name: city, label: City, type: string, required: true }
+      - { name: state, label: State, type: string, required: true }
+      - { name: service_area, label: Service Area, type: string, required: true }
+      - { name: email, label: Public Email, type: string, required: true }
+      - { name: phone, label: Public Phone, type: string, required: true }
+      - { name: registration_url, label: Registration URL, type: string, required: true }
+      - { name: analytics_id, label: Google Analytics ID, type: string, required: false }
+      - name: meeting
+        label: Meeting Details
+        type: object
+        fields:
+          - { name: venue, label: Venue, type: string, required: true }
+          - { name: street, label: Street Address, type: string, required: true }
+          - { name: city_state_zip, label: City State ZIP, type: string, required: true }
+          - { name: schedule, label: Schedule, type: string, required: true }
+
+  - name: events
+    label: Events
+    type: file
+    path: _data/events.yml
+    format: yaml
+    fields:
+      - { name: season, label: Season Heading, type: string, required: true }
+      - name: events
+        label: Upcoming Events
+        type: object
+        list: true
+        fields:
+          - { name: id, label: Event ID, type: string, required: true }
+          - { name: date, label: Start Date, type: date, required: true }
+          - { name: end_date, label: End Date, type: date, required: false }
+          - { name: date_label, label: Display Date, type: string, required: true }
+          - { name: title, label: Event Title, type: string, required: true }
+          - { name: time, label: Time, type: string, required: true }
+          - { name: location, label: Location, type: string, required: true }
+          - { name: location_url, label: Location Map URL, type: string, required: false }
+          - { name: featured, label: Feature on Home Page, type: boolean, required: false }
+          - { name: announcement, label: Announcement Text, type: string, required: false }
+          - { name: description, label: Description, type: text, required: true }
+          - { name: checklist, label: What to Bring, type: string, list: true, required: false }
+          - { name: signup_label, label: Signup Button Label, type: string, required: false }
+          - { name: signup_url, label: Signup URL, type: string, required: false }
+
   - name: photo_gallery
     label: Photo Gallery
     type: file

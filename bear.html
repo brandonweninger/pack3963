@@ -1,50 +1,15 @@
 ---
+layout: default
+title: Bear Den – Cub Scout Pack 3963 | Chicago, IL
+description: Learn about the Bear den of Cub Scout Pack 3963 in Chicago, IL. Bear is for 3rd grade Scouts and focuses on hands-on projects, outdoor skills, cooking, service, and growing independence.
+keywords: Bear den, third grade Cub Scouts, Pack 3963 Bear, Cub Scout Bear rank, Chicago Cub Scouts, Jefferson Park, Portage Park
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
 
-  <title>Bear Den – Cub Scout Pack 3963 | Chicago, IL</title>
-
-  <meta name="description" content="Learn about the Bear den of Cub Scout Pack 3963 in Chicago, IL. Bear is for 3rd grade Scouts and focuses on hands-on projects, outdoor skills, cooking, service, and growing independence.">
-  <meta name="keywords" content="Bear den, third grade Cub Scouts, Pack 3963 Bear, Cub Scout Bear rank, Chicago Cub Scouts, Jefferson Park, Portage Park">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Modular CSS System -->
-  <link rel="stylesheet" href="base.css">
-  <link rel="stylesheet" href="layout.css">
-  <link rel="stylesheet" href="components.css">
-  <link rel="stylesheet" href="form.css">
-  <link rel="stylesheet" href="responsive.css">
-
-  <!-- ============================
-       GOOGLE ANALYTICS (GA4)
-       ============================ -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5E98N12ZK1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-5E98N12ZK1');
-  </script>
-
-</head>
-
-<body>
-
-<!-- Top Announcement Banner -->
-{% include announcement.html %}
-
-<!-- Navigation -->
-{% include nav.html %}
-
-  <!-- Hero Header -->
+<!-- Hero Header -->
   <header class="hero-header">
     <div class="hero-image-wrapper">
-      <img 
-        src="assets/images/troopheader.png" 
+      <img
+        src="assets/images/troopheader.png"
         alt="Bear Den – Cub Scout Pack 3963"
         class="hero-image"
       />
@@ -57,19 +22,19 @@
 
       <h1>Bear Den (3rd Grade)</h1>
       <p>
-        Bear is a year of hands‑on adventure, outdoor skills, creativity, and growing independence. 
-        At Pack 3963, Bear Scouts take on more challenging projects, learn practical life skills, 
+        Bear is a year of hands‑on adventure, outdoor skills, creativity, and growing independence.
+        At Pack 3963, Bear Scouts take on more challenging projects, learn practical life skills,
         and participate in service activities that help them understand their community.
       </p>
 
       <p>
-        Pack 3963 meets at <strong>Eden United Church of Christ</strong>, located at 
-        <strong>5051 W Gunnison St, Chicago, IL 60630</strong>.
+        Pack 3963 meets at <strong>{{ site.data.pack.meeting.venue }}</strong>, located at
+        <strong>{{ site.data.pack.meeting.street }}, {{ site.data.pack.meeting.city_state_zip }}</strong>.
       </p>
 
       <p>
-        Bears begin to show real confidence as they learn to cook outdoors, build simple projects, 
-        explore nature, and work together as a team. This rank is a favorite for many Scouts because 
+        Bears begin to show real confidence as they learn to cook outdoors, build simple projects,
+        explore nature, and work together as a team. This rank is a favorite for many Scouts because
         of how active and engaging the adventures are.
       </p>
 
@@ -83,8 +48,8 @@
           <li><strong>Gabriel Mejia</strong></li>
         </ul>
         <p>
-          Bear leaders guide Scouts through hands‑on projects, outdoor cooking, service activities, 
-          and adventures that build confidence and teamwork. Parents are encouraged to support at‑home 
+          Bear leaders guide Scouts through hands‑on projects, outdoor cooking, service activities,
+          and adventures that build confidence and teamwork. Parents are encouraged to support at‑home
           requirements and attend outings when possible.
         </p>
       </div>
@@ -104,7 +69,7 @@
       </div>
 
       <p>
-        Bears begin to take pride in completing more complex tasks and learning skills that prepare 
+        Bears begin to take pride in completing more complex tasks and learning skills that prepare
         them for Webelos and Arrow of Light.
       </p>
 
@@ -113,7 +78,7 @@
       <!-- Adventures -->
       <h2>Bear Adventures</h2>
       <p>
-        Bear adventures help Scouts explore creativity, learn practical skills, and grow in confidence. 
+        Bear adventures help Scouts explore creativity, learn practical skills, and grow in confidence.
         Completing required adventures and electives earns the Bear rank.
       </p>
 
@@ -140,7 +105,7 @@
       <!-- Parent Expectations -->
       <h2>Parent & Guardian Role</h2>
       <p>
-        Bear Scouts are becoming more capable and independent, but parent involvement is still important. 
+        Bear Scouts are becoming more capable and independent, but parent involvement is still important.
         At Pack 3963, we ask that parents:
       </p>
       <ul class="feature-list">
@@ -155,17 +120,17 @@
       <!-- Joining -->
       <h2>Joining the Bear Den</h2>
       <p>
-        If your child is entering 3rd grade and you live in Jefferson Park, Portage Park, or the Northwest Side 
+        If your child is entering 3rd grade and you live in Jefferson Park, Portage Park, or the Northwest Side
         of Chicago, they are eligible to join the Bear den at Pack 3963.
       </p>
 
       <p>
-        Visit our <a href="contact.html">Contact Page</a> or email <strong>cubscouts3963@gmail.com</strong> to get started.
+        Visit our <a href="contact.html">Contact Page</a> or email <strong>{{ site.data.pack.email }}</strong> to get started.
       </p>
 
       <p class="contact-info">
-        <strong>Email:</strong> cubscouts3963@gmail.com<br>
-        <strong>Phone:</strong> (773) 257-3212
+        <strong>Email:</strong> {{ site.data.pack.email }}<br>
+        <strong>Phone:</strong> {{ site.data.pack.phone }}
       </p>
 
       <p>
@@ -174,20 +139,3 @@
 
     </div>
   </main>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <p>
-        &copy; <span id="year"></span> Cub Scout Pack 3963 — Chicago, IL<br>
-        <strong>Meeting Location:</strong> Eden United Church of Christ, 5051 W Gunnison St, Chicago, IL 60630
-      </p>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-
-</body>
-</html>

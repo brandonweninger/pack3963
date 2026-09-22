@@ -1,0 +1,11 @@
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>
+      &copy; {{ "now" | date: "%Y" }} {{ site.data.pack.name }} — {{ site.data.pack.city }}, {{ site.data.pack.state }}<br>
+      <strong>Meeting Location:</strong>
+      {{ site.data.pack.meeting.venue }},
+      {{ site.data.pack.meeting.street }},
+      {{ site.data.pack.meeting.city_state_zip }}
+    </p>
+  </div>
+</footer>

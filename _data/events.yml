@@ -1,0 +1,44 @@
+season: Fall 2026
+events:
+  - id: nature-hike-2026
+    date: "2026-09-26"
+    date_label: Saturday, September 26
+    title: First Nature Hike of the Season
+    time: 9:30 AM
+    location: meeting
+    location_url: https://goo.gl/maps/Zn2eXZFrYFTFZKrV7
+    featured: true
+    announcement: Nature hike this Saturday, September 26 at 9:30 AM — meet at Eden Church.
+    description: >-
+      We will begin and end at Eden Church while exploring LaBagh Woods and Forest Glen Woods
+      by way of the Weber Spur, an old railroad trail. It is a good, long walk, so please arrive
+      ready to hike.
+    checklist:
+      - Good shoes for hiking
+      - A water bottle filled with water
+      - A healthy, portable snack such as trail mix, jerky, or apples
+      - Sun protection, such as a hat or sunscreen
+      - A small backpack for carrying your supplies
+  - id: farmers-market-popcorn-2026
+    date: "2026-09-27"
+    date_label: Sunday, September 27
+    title: Popcorn Sale at Jefferson Park Farmers Market
+    time: 9:30 AM–1:30 PM
+    location: Jefferson Park Farmers Market, 4822 N Long Ave, Chicago
+    description: >-
+      Scouts can sign up for a shift to sell popcorn at the Jefferson Park Farmers Market.
+      Sign-up times are available throughout the market's four-hour window.
+    signup_label: Sign up for a popcorn shift
+    signup_url: https://forms.gle/P18z4Y4mc1pA6UXA7
+  - id: white-pines-camping-2026
+    date: "2026-10-10"
+    end_date: "2026-10-12"
+    date_label: October 10–12
+    title: Fall Camping Trip at White Pines
+    time: Weekend overnight trip
+    location: White Pines State Park, Illinois
+    description: >-
+      Our annual Fall Camping Trip is one of the biggest adventures of the year! Scouts and families
+      will enjoy hiking, campfire cooking, outdoor skills, nature exploration, and time together in
+      one of Illinois' most beautiful state parks. This is a perfect opportunity for new families to
+      experience Cub Scout camping.
