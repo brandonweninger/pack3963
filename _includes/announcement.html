@@ -1,8 +1,9 @@
-{% if site.announcement_enabled %}
+{% assign featured_event = site.data.events.events | where: "featured", true | first %}
+{% if site.announcement_enabled and featured_event %}
 <div class="announcement-banner">
-  <p>{{ site.announcement_text }}</p>
+  <p>{{ featured_event.announcement }}</p>
   {% if site.announcement_link %}
-    <a href="{{ site.announcement_link }}" class="btn-gold">Click here for details</a>
+    <a href="{{ site.announcement_link | relative_url }}" class="btn-gold">View event details</a>
   {% endif %}
 </div>
 {% endif %}

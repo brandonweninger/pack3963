@@ -1,10 +1,10 @@
-<nav class="main-nav">
+<nav class="main-nav" aria-label="Primary navigation">
   <div class="nav-inner">
-    <a href="/index.html" class="nav-logo">Pack 3963</a>
+    <a href="{{ '/index.html' | relative_url }}" class="nav-logo">{{ site.data.pack.short_name }}</a>
 
     <ul class="nav-links">
       {% for item in site.data.navigation %}
-        <li><a href="{{ item.url }}">{{ item.name }}</a></li>
+        <li><a href="{{ item.url | relative_url }}">{{ item.name }}</a></li>
       {% endfor %}
     </ul>
   </div>

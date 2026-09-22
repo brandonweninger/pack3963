@@ -1,54 +1,17 @@
 ---
+layout: default
+title: Cub Scout Pack 3963 | Chicago, IL – Jefferson Park & Portage Park Scouting
+description: Cub Scout Pack 3963 serves families in Jefferson Park, Portage Park, and the Northwest Side of Chicago. Learn about our dens, events, leadership, and how to join our youth scouting program for boys and girls in grades K–5.
+keywords: Cub Scouts Chicago, Pack 3963, Jefferson Park Scouts, Portage Park Scouts, Chicago youth programs, Cub Scout Pack, Scouting Chicago, kids activities Chicago, Northwest Side Chicago Scouts
+scripts:
+- /assets/js/home-events.js
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
 
-  <!-- ============================
-       SEO: TITLE + DESCRIPTION + KEYWORDS
-       ============================ -->
-  <title>Cub Scout Pack 3963 | Chicago, IL – Jefferson Park & Portage Park Scouting</title>
-
-  <meta name="description" content="Cub Scout Pack 3963 serves families in Jefferson Park, Portage Park, and the Northwest Side of Chicago. Learn about our dens, events, leadership, and how to join our youth scouting program for boys and girls in grades K–5.">
-
-  <meta name="keywords" content="Cub Scouts Chicago, Pack 3963, Jefferson Park Scouts, Portage Park Scouts, Chicago youth programs, Cub Scout Pack, Scouting Chicago, kids activities Chicago, Northwest Side Chicago Scouts">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Modular CSS System -->
-  <link rel="stylesheet" href="base.css">
-  <link rel="stylesheet" href="layout.css">
-  <link rel="stylesheet" href="components.css">
-  <link rel="stylesheet" href="form.css">
-  <link rel="stylesheet" href="responsive.css">
-
-  <!-- ============================
-       GOOGLE ANALYTICS (GA4)
-       ============================ -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5E98N12ZK1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-5E98N12ZK1');
-  </script>
-
-</head>
-
-<body>
-
-<!-- Top Announcement Banner -->
-{% include announcement.html %}
-
-<!-- Navigation -->
-{% include nav.html %}
-
-  <!-- Hero Header -->
+<!-- Hero Header -->
   <header class="hero-header">
     <div class="hero-image-wrapper">
-      <img 
-        src="assets/images/troopheader.png" 
+      <img
+        src="assets/images/troopheader.png"
         alt="Cub Scout Pack 3963 – Chicago, IL"
         class="hero-image"
       />
@@ -75,17 +38,22 @@
           <li>Leadership development and teamwork</li>
         </ul>
 
-        <div class="callout-box">
-          <h2>📅 First Pack Meeting & Open House</h2>
-          <p><strong>Date:</strong> September 19th, 2026</p>
-          <p><strong>Time:</strong> 9:30 AM</p>
-          <p><strong>Location:</strong> Eden United Church of Christ</p>
-          <p><strong>Address:</strong> 5051 W Gunnison St, Chicago, IL 60630</p>
-          <p>
-            New families are invited to join us for an <strong>Open House</strong> to meet our leaders,
-            learn about the program, and explore Cub Scouts as an option for their children.
-          </p>
-        </div>
+        <section
+          class="callout-box"
+          id="next-event"
+          data-meeting-venue="{{ site.data.pack.meeting.venue | escape }}"
+          data-meeting-address="{{ site.data.pack.meeting.street | append: ', ' | append: site.data.pack.meeting.city_state_zip | escape }}"
+          hidden
+        >
+          <h2>📅 Next Event: <span id="next-event-title"></span></h2>
+          <p><strong>Date:</strong> <span id="next-event-date"></span></p>
+          <p><strong>Time:</strong> <span id="next-event-time"></span></p>
+          <p><strong>Location:</strong> <span id="next-event-location"></span></p>
+          <p id="next-event-description"></p>
+          <p><a href="events.html">View all upcoming events</a></p>
+        </section>
+
+        <script type="application/json" id="events-data">{{ site.data.events.events | jsonify }}</script>
 
         <!-- ============================
              NEW SCOUT FLYER SECTION
@@ -99,9 +67,9 @@
 
           <!-- Embedded Flyer Image -->
           <div class="flyer-image-wrapper">
-            <img 
-              src="assets/images/flyer.png" 
-              alt="Pack 3963 Cub Scout Welcome Flyer" 
+            <img
+              src="assets/images/flyer.png"
+              alt="Pack 3963 Cub Scout Welcome Flyer"
               class="flyer-image"
             >
           </div>
@@ -112,7 +80,7 @@
           </a>
         </div>
 
-        <a href="https://my.scouting.org/online-registration/7b1b6fb8-d1db-4455-a64a-475521e8f1fb/applicant-type" 
+        <a href="{{ site.data.pack.registration_url }}"
    class="btn-blue" target="_blank" rel="noopener noreferrer">
   Register for Cub Scouts (Youth or Adult)
 </a>
@@ -122,8 +90,8 @@
         </p>
 
         <p>
-          Pack 3963 meets at <strong>Eden United Church of Christ</strong>, located at 
-          <strong>5051 W Gunnison St, Chicago, IL 60630</strong>.
+          Pack 3963 meets at <strong>{{ site.data.pack.meeting.venue }}</strong>, located at
+          <strong>{{ site.data.pack.meeting.street }}, {{ site.data.pack.meeting.city_state_zip }}</strong>.
         </p>
 
         <p>
@@ -132,36 +100,19 @@
         </p>
 
         <p class="contact-info">
-          <strong>Email:</strong> cubscouts3963@gmail.com<br>
-          <strong>Phone:</strong> (773) 257-3212
+          <strong>Email:</strong> {{ site.data.pack.email }}<br>
+          <strong>Phone:</strong> {{ site.data.pack.phone }}
         </p>
       </div>
 
       <!-- Right Column: Logo -->
       <div class="column column-image">
-        <img 
-          src="assets/images/cubscoutlogo.png" 
-          alt="Cub Scout Logo" 
+        <img
+          src="assets/images/cubscoutlogo.png"
+          alt="Cub Scout Logo"
           class="cub-logo"
         />
       </div>
 
     </div>
   </main>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <p>
-        &copy; <span id="year"></span> Cub Scout Pack 3963 — Chicago, IL<br>
-        <strong>Meeting Location:</strong> Eden United Church of Christ, 5051 W Gunnison St, Chicago, IL 60630
-      </p>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-
-</body>
-</html>
