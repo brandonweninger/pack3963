@@ -100,11 +100,12 @@ events:
     date: "2026-11-15"
     date_label: Sunday, November 15
     title: Forest Preserve Stewardship Day
-    time: 10:00 AM–12:00 PM (tentative)
+    time: 10:00 AM–1:00 PM
     location: Miami Woods
     description: >-
-      Pack families will volunteer with the Friends of the Forest Preserves at Miami Woods.
-      The calendar time is still marked to be confirmed, so watch for final activity details.
+      Pack families will volunteer during the Forest Preserves' official stewardship work day.
+      A group waiver has been submitted, and each participant will complete an individual waiver
+      on-site. Additional activity details will be shared closer to the date.
   - id: raingutter-regatta-2026
     date: "2026-11-21"
     date_label: Saturday, November 21
@@ -123,15 +124,16 @@ events:
     description: >-
       The Pack calendar reserves this date for den meetings or a possible forest preserve
       stewardship activity. Final plans will be shared when confirmed.
-  - id: november-regatta-prep-2026
+  - id: friendship-place-service-2026
     date: "2026-11-14"
     date_label: Saturday, November 14
-    title: Den Meetings and Raingutter Regatta Preparation
-    time: 9:30–11:00 AM
-    location: meeting
+    title: Friendship Place Service Opportunity
+    time: To be announced
+    location: To be confirmed
     description: >-
-      Scouts will meet by den and finish preparing for the Raingutter Regatta. The calendar also
-      notes a possible forest preserve stewardship activity, pending confirmation.
+      Liz is organizing a Friendship Place service opportunity, especially for younger Scouts.
+      This may also be a good alternative for families who cannot participate in Sunday's Forest
+      Preserve Stewardship Day. Additional details will be shared closer to the date.
   - id: thanksgiving-break-2026
     date: "2026-11-28"
     date_label: Saturday, November 28
