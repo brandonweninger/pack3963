@@ -47,6 +47,18 @@ keywords: Cub Scout contact, Pack 3963 contact, Chicago Cub Scouts, Jefferson Pa
     <strong>Phone:</strong> {{ site.data.pack.phone }}
   </p>
 
+  {% if site.data.pack.facebook_url != blank or site.data.pack.instagram_url != blank %}
+    <h3>Follow Pack 3963</h3>
+    <p class="social-links social-links-contact">
+      {% if site.data.pack.facebook_url != blank %}
+        <a href="{{ site.data.pack.facebook_url }}" target="_blank" rel="noopener noreferrer">Facebook</a>
+      {% endif %}
+      {% if site.data.pack.instagram_url != blank %}
+        <a href="{{ site.data.pack.instagram_url }}" target="_blank" rel="noopener noreferrer">Instagram</a>
+      {% endif %}
+    </p>
+  {% endif %}
+
   <p class="privacy-note">
     Your information is kept private and used only for Pack communication and membership coordination.
   </p>
