@@ -3,6 +3,8 @@ layout: default
 title: Cub Scout Events – Pack 3963 | Chicago, IL
 description: Explore upcoming Cub Scout events for Pack 3963 in Chicago, IL. Serving Jefferson Park, Portage Park, and the Northwest Side with camping, Pinewood Derby, service projects, and family-friendly activities.
 keywords: Cub Scout events Chicago, Pack 3963 events, Jefferson Park Scouts, Portage Park Scouts, Cub Scout calendar, youth activities Chicago, scouting events
+scripts:
+- /assets/js/events-page.js
 ---
 
 <!-- Hero Header -->
@@ -38,8 +40,14 @@ keywords: Cub Scout events Chicago, Pack 3963 events, Jefferson Park Scouts, Por
       <h2>{{ site.data.events.season }} Events</h2>
 
       {% assign upcoming_events = site.data.events.events | sort: "date" %}
+      <p id="no-upcoming-events" class="callout-box" hidden>
+        No upcoming events are currently posted. Please check back soon.
+      </p>
       {% for event in upcoming_events %}
-      <article class="callout-box">
+      <article
+        class="callout-box event-card"
+        data-event-end="{{ event.end_date | default: event.date }}"
+      >
         <h3>{{ event.date_label }} – {{ event.title }}</h3>
         <p><strong>Time:</strong> {{ event.time }}</p>
         <p>
