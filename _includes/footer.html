@@ -7,5 +7,15 @@
       {{ site.data.pack.meeting.street }},
       {{ site.data.pack.meeting.city_state_zip }}
     </p>
+    {% if site.data.pack.facebook_url != blank or site.data.pack.instagram_url != blank %}
+      <nav class="social-links" aria-label="Pack social media">
+        {% if site.data.pack.facebook_url != blank %}
+          <a href="{{ site.data.pack.facebook_url }}" target="_blank" rel="noopener noreferrer">Facebook</a>
+        {% endif %}
+        {% if site.data.pack.instagram_url != blank %}
+          <a href="{{ site.data.pack.instagram_url }}" target="_blank" rel="noopener noreferrer">Instagram</a>
+        {% endif %}
+      </nav>
+    {% endif %}
   </div>
 </footer>
