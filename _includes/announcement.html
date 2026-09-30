@@ -1,9 +1,15 @@
-{% assign featured_event = site.data.events.events | where: "featured", true | first %}
-{% if site.announcement_enabled and featured_event %}
-<div class="announcement-banner">
-  <p>{{ featured_event.announcement }}</p>
+{% if site.announcement_enabled %}
+<div
+  class="announcement-banner"
+  id="announcement-banner"
+  data-details-url="{{ site.announcement_link | relative_url }}"
+  hidden
+>
+  <p id="announcement-message"></p>
   {% if site.announcement_link %}
     <a href="{{ site.announcement_link | relative_url }}" class="btn-gold">View event details</a>
   {% endif %}
 </div>
+<script type="application/json" id="announcement-events-data">{{ site.data.events.events | jsonify }}</script>
+<script src="{{ '/assets/js/announcement.js' | relative_url }}" defer></script>
 {% endif %}
