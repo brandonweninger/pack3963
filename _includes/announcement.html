@@ -2,10 +2,13 @@
 <div
   class="announcement-banner"
   id="announcement-banner"
-  data-details-url="{{ site.announcement_link | relative_url }}"
+  aria-live="polite"
   hidden
 >
-  <p id="announcement-message"></p>
+  <div class="announcement-banner__messages">
+    <p id="announcement-event-message" hidden></p>
+    <p id="announcement-deadline-message" class="announcement-banner__deadline" hidden></p>
+  </div>
   {% if site.announcement_link %}
     <a href="{{ site.announcement_link | relative_url }}" class="btn-gold">View event details</a>
   {% endif %}

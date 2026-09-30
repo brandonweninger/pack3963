@@ -10,15 +10,26 @@ if (announcementBanner && announcementData) {
     String(now.getDate()).padStart(2, '0')
   ].join('-');
 
-  const nextEvent = events
+  const upcomingItems = events
     .filter((event) => (event.end_date || event.date) >= today)
-    .sort((first, second) => first.date.localeCompare(second.date))[0];
+    .sort((first, second) => first.date.localeCompare(second.date));
 
-  if (nextEvent) {
-    const message = nextEvent.announcement
+  const nextEvent = upcomingItems.find((event) => event.kind !== 'deadline');
+  const nextDeadline = upcomingItems.find((event) => event.kind === 'deadline');
+  const eventMessage = document.getElementById('announcement-event-message');
+  const deadlineMessage = document.getElementById('announcement-deadline-message');
+
+  if (nextEvent && eventMessage) {
+    eventMessage.textContent = nextEvent.announcement
       || `Next event: ${nextEvent.date_label} — ${nextEvent.title}`;
-
-    document.getElementById('announcement-message').textContent = message;
-    announcementBanner.hidden = false;
+    eventMessage.hidden = false;
   }
+
+  if (nextDeadline && deadlineMessage) {
+    deadlineMessage.textContent = nextDeadline.announcement
+      || `Deadline: ${nextDeadline.date_label} — ${nextDeadline.title}`;
+    deadlineMessage.hidden = false;
+  }
+
+  announcementBanner.hidden = !nextEvent && !nextDeadline;
 }

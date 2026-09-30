@@ -47,8 +47,12 @@ scripts:
       <article
         class="callout-box event-card"
         data-event-end="{{ event.end_date | default: event.date }}"
+        data-event-kind="{{ event.kind | default: 'event' }}"
       >
-        <h3>{{ event.date_label }} – {{ event.title }}</h3>
+        <h3>
+          {% if event.kind == "deadline" %}<span class="event-kind-badge">Deadline</span>{% endif %}
+          {{ event.date_label }} – {{ event.title }}
+        </h3>
         <p><strong>Time:</strong> {{ event.time }}</p>
         <p>
           <strong>Location:</strong>
