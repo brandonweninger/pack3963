@@ -45,9 +45,10 @@ scripts:
       </p>
       {% for event in upcoming_events %}
       <article
-        class="callout-box event-card"
+        class="callout-box event-card pack-event-card"
         data-event-end="{{ event.end_date | default: event.date }}"
         data-event-kind="{{ event.kind | default: 'event' }}"
+        data-event-group="pack"
       >
         <h3>
           {% if event.kind == "deadline" %}<span class="event-kind-badge">Deadline</span>{% endif %}
@@ -84,6 +85,64 @@ scripts:
         {% endif %}
       </article>
       {% endfor %}
+
+      <!-- ============================
+           EDEN UCC COMMUNITY EVENTS
+           ============================ -->
+      <section class="community-events" aria-labelledby="eden-community-events-heading">
+        <h2 id="eden-community-events-heading">{{ site.data.community_events.heading }}</h2>
+        <p>{{ site.data.community_events.intro }}</p>
+
+        {% assign community_events = site.data.community_events.events | sort: "date" %}
+        <p id="no-community-events" class="callout-box" hidden>
+          No upcoming Eden UCC community events are currently posted.
+        </p>
+        {% for event in community_events %}
+        <article
+          class="callout-box event-card community-event-card"
+          data-event-end="{{ event.end_date | default: event.date }}"
+          data-event-group="community"
+        >
+          <h3><span class="community-event-badge">Eden UCC</span>{{ event.date_label }} – {{ event.title }}</h3>
+          <p><strong>Time:</strong> {{ event.time }}</p>
+          <p><strong>Location:</strong> {{ event.location }}</p>
+          <p><strong>Organized by:</strong> {{ event.organizer }}</p>
+          <p>{{ event.description }}</p>
+          <div class="event-actions">
+            {% if event.signup_url %}
+            <a class="btn-blue" href="{{ event.signup_url }}" target="_blank" rel="noopener noreferrer">
+              {{ event.signup_label | default: "Learn more" }}
+            </a>
+            {% endif %}
+            {% if event.payment_url %}
+            <a class="btn-secondary" href="{{ event.payment_url }}" target="_blank" rel="noopener noreferrer">
+              {{ event.payment_label | default: "Pay online" }}
+            </a>
+            {% endif %}
+            {% if event.contact_url %}
+            <a class="btn-secondary" href="{{ event.contact_url }}">
+              {{ event.contact_label | default: "Contact organizer" }}
+            </a>
+            {% endif %}
+          </div>
+        </article>
+        {% endfor %}
+
+        <div class="community-resource-grid" aria-label="Eden UCC event flyers and forms">
+          {% for resource in site.data.community_events.resources %}
+          <a
+            class="community-resource-card"
+            href="{{ resource.image | relative_url }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-resource-end="{{ resource.end_date }}"
+          >
+            <img src="{{ resource.image | relative_url }}" alt="{{ resource.alt }}" loading="lazy">
+            <span>{{ resource.title }}</span>
+          </a>
+          {% endfor %}
+        </div>
+      </section>
 
       <!-- ============================
            YEAR-ROUND ACTIVITIES

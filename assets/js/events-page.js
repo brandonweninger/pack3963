@@ -9,7 +9,7 @@ if (eventCards.length) {
     String(now.getDate()).padStart(2, '0')
   ].join('-');
 
-  let visibleEventCount = 0;
+  const visibleCounts = { pack: 0, community: 0 };
 
   eventCards.forEach((eventCard) => {
     const eventEndDate = eventCard.dataset.eventEnd;
@@ -18,11 +18,21 @@ if (eventCards.length) {
     eventCard.hidden = eventHasPassed;
 
     if (!eventHasPassed) {
-      visibleEventCount += 1;
+      const eventGroup = eventCard.dataset.eventGroup || 'pack';
+      visibleCounts[eventGroup] = (visibleCounts[eventGroup] || 0) + 1;
     }
   });
 
   if (noUpcomingEvents) {
-    noUpcomingEvents.hidden = visibleEventCount > 0;
+    noUpcomingEvents.hidden = visibleCounts.pack > 0;
   }
+
+  const noCommunityEvents = document.getElementById('no-community-events');
+  if (noCommunityEvents) {
+    noCommunityEvents.hidden = visibleCounts.community > 0;
+  }
+
+  document.querySelectorAll('[data-resource-end]').forEach((resource) => {
+    resource.hidden = resource.dataset.resourceEnd < today;
+  });
 }
