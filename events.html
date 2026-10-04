@@ -110,7 +110,7 @@ scripts:
           <p>{{ event.description }}</p>
           <div class="event-actions">
             {% if event.signup_url %}
-            <a class="btn-blue" href="{% if event.signup_url contains '://' %}{{ event.signup_url }}{% else %}{{ event.signup_url | relative_url }}{% endif %}" target="_blank" rel="noopener noreferrer">
+            <a class="btn-blue" href="{{ event.signup_url }}" target="_blank" rel="noopener noreferrer">
               {{ event.signup_label | default: "Learn more" }}
             </a>
             {% endif %}
