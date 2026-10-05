@@ -16,29 +16,19 @@
     align-items: flex-start;
   }
 
-  .nav-item-dropdown {
-    flex-basis: 100%;
-  }
-
-  .nav-item-dropdown > a {
-    display: inline-block;
-    margin-bottom: 5px;
-  }
-
-  .nav-dropdown-icon {
-    display: none;
-  }
-
   .nav-submenu {
     position: static;
-    display: flex;
     min-width: 0;
-    padding: 0 0 0 14px;
-    gap: 12px;
-    flex-wrap: wrap;
+    margin-top: 7px;
+    padding: 4px 0 0 14px;
     background: transparent;
     border: 0;
     box-shadow: none;
+  }
+
+  .nav-dropdown[open] .nav-submenu {
+    display: grid;
+    gap: 6px;
   }
 
   .nav-submenu a {
