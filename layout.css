@@ -45,6 +45,31 @@
   display: inline-block;
   margin-left: 3px;
   font-size: 0.75em;
+  transition: transform 0.15s ease;
+}
+
+.nav-dropdown summary {
+  color: var(--white);
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+
+.nav-dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-dropdown summary:hover {
+  text-decoration: underline;
+}
+
+.nav-dropdown summary:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
+.nav-dropdown[open] .nav-dropdown-icon {
+  transform: rotate(180deg);
 }
 
 .nav-submenu {
@@ -84,8 +109,7 @@
   text-decoration: none;
 }
 
-.nav-item-dropdown:hover .nav-submenu,
-.nav-item-dropdown:focus-within .nav-submenu {
+.nav-dropdown[open] .nav-submenu {
   display: block;
 }
 
