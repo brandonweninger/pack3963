@@ -4,6 +4,11 @@
   url: /dens.html
 - name: Events
   url: /events.html
+  children:
+    - name: Pack 3963 Events
+      url: /events.html
+    - name: Eden UCC Events
+      url: /community-events.html
 - name: Leadership
   url: /leadership.html
 - name: Resources
