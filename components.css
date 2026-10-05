@@ -94,6 +94,54 @@
   border-top: 3px solid var(--gold);
 }
 
+.event-page-switcher {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 28px 0 36px;
+}
+
+.event-page-option {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  min-height: 125px;
+  padding: 20px;
+  color: var(--blue);
+  background: var(--white);
+  border: 2px solid #d5dbe3;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.event-page-option strong {
+  font-size: 1.15rem;
+}
+
+.event-page-option span {
+  color: #39475a;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.event-page-option:hover,
+.event-page-option:focus-visible {
+  border-color: var(--blue);
+  box-shadow: 0 5px 14px rgba(0, 48, 105, 0.12);
+  text-decoration: none;
+}
+
+.event-page-option--active {
+  color: var(--white);
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+.event-page-option--active span {
+  color: var(--white);
+}
+
 .community-event-card {
   border-left-color: #377b5b;
 }
