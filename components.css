@@ -35,6 +35,10 @@
   margin-left: 0;
 }
 
+.announcement-banner__link-short {
+  display: none;
+}
+
 .event-kind-badge {
   display: inline-block;
   background: var(--gold);
