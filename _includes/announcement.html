@@ -17,5 +17,5 @@
   {% endif %}
 </div>
 <script type="application/json" id="announcement-events-data">{{ site.data.events.events | jsonify }}</script>
-<script src="{{ '/assets/js/announcement.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/announcement.js' | relative_url }}?v={{ site.asset_version }}" defer></script>
 {% endif %}
